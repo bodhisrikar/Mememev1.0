@@ -37,10 +37,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        topTextField.defaultTextAttributes = mememeTextAttributes
-        bottomTextField.defaultTextAttributes = mememeTextAttributes
-        topTextField.delegate = mememeTextFieldDelegate
-        bottomTextField.delegate = mememeTextFieldDelegate
+        configureTextFields(textField: topTextField)
+        configureTextFields(textField: bottomTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,18 +64,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func albumPicker(_ sender: Any) {
-        let albumPickerController = UIImagePickerController()
-        albumPickerController.delegate = self
-        albumPickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        present(albumPickerController, animated: true, completion: nil)
+        sourcePicker(sourceType: UIImagePickerController.SourceType.photoLibrary)
     }
     
     
     @IBAction func cameraPicker(_ sender: Any) {
-        let cameraController = UIImagePickerController()
-        cameraController.delegate = self
-        cameraController.sourceType = UIImagePickerController.SourceType.camera
-        present(cameraController, animated: true, completion: nil)
+        sourcePicker(sourceType: UIImagePickerController.SourceType.camera)
     }
     
     @IBAction func shareMeme(_ sender: Any) {
@@ -89,8 +81,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cancelMeme(_ sender: Any) {
         selectedImage.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        configureTextFields(textField: topTextField, text: "top")
+        configureTextFields(textField: bottomTextField, text: "bottom")
+    }
+    
+    func configureTextFields(textField: UITextField, text: String? = nil) {
+        textField.defaultTextAttributes = mememeTextAttributes
+        textField.delegate = mememeTextFieldDelegate
+        if text != nil {
+            textField.text = text
+        }
+    }
+    
+    func sourcePicker(sourceType: UIImagePickerController.SourceType) {
+        let sourcePickerController = UIImagePickerController()
+        sourcePickerController.delegate = self
+        sourcePickerController.sourceType = sourceType
+        present(sourcePickerController, animated: true, completion: nil)
     }
     
     func subscribeToKeyboardNotifications() {
