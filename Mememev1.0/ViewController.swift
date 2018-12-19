@@ -88,6 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func configureTextFields(textField: UITextField, text: String? = nil) {
         textField.defaultTextAttributes = mememeTextAttributes
         textField.delegate = mememeTextFieldDelegate
+        textField.textAlignment = NSTextAlignment.center
         if text != nil {
             textField.text = text
         }
