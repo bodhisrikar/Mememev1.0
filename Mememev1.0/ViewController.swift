@@ -25,7 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBOutlet weak var albumToolbarItem: UIToolbar!
-    @IBOutlet weak var cameraToolbarButton: UIButton!
+    @IBOutlet weak var cameraToolbarButton: UIBarButtonItem!
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -75,7 +75,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareMeme(_ sender: Any) {
         let memedImage = generateMememeImage()
         let shareImageController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        save(memedImage)
+        shareImageController.completionWithItemsHandler = {activity, completed, returned, error in
+            if completed {
+                self.save(memedImage)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
         present(shareImageController, animated: true, completion: nil)
     }
     
