@@ -12,6 +12,7 @@
 		2216697221C6942400EF8BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2216697021C6942400EF8BA0 /* Main.storyboard */; };
 		2216697421C6942600EF8BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2216697321C6942600EF8BA0 /* Assets.xcassets */; };
 		2216697721C6942600EF8BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2216697521C6942600EF8BA0 /* LaunchScreen.storyboard */; };
+		2216698021C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216697F21C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2216697321C6942600EF8BA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2216697621C6942600EF8BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2216697821C6942600EF8BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2216697F21C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMememeTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		2216696B21C6942400EF8BA0 /* Mememev1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				2216697E21C6C3BD00EF8BA0 /* CustomDelegates */,
 				2216696C21C6942400EF8BA0 /* AppDelegate.swift */,
 				2216696E21C6942400EF8BA0 /* ViewController.swift */,
 				2216697021C6942400EF8BA0 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				2216697821C6942600EF8BA0 /* Info.plist */,
 			);
 			path = Mememev1.0;
+			sourceTree = "<group>";
+		};
+		2216697E21C6C3BD00EF8BA0 /* CustomDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				2216697F21C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift */,
+			);
+			path = CustomDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2216698021C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift in Sources */,
 				2216696F21C6942400EF8BA0 /* ViewController.swift in Sources */,
 				2216696D21C6942400EF8BA0 /* AppDelegate.swift in Sources */,
 			);
