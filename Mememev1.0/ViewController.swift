@@ -42,7 +42,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Camera button should only be available if the device has the camera.
         cameraToolbarButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        // Share and cancel buttons should not be displayed before the user selects an image or clicks an image.
         shareButton.isEnabled = (selectedImage.image != nil)
         cancelButton.isEnabled = (selectedImage.image != nil)
         subscribeToKeyboardNotifications()
@@ -75,6 +77,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareMeme(_ sender: Any) {
         let memedImage = generateMememeImage()
         let shareImageController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        // Saving the image only after user performs an action.
         shareImageController.completionWithItemsHandler = {activity, completed, returned, error in
             if completed {
                 self.save(memedImage)
@@ -94,6 +97,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.defaultTextAttributes = mememeTextAttributes
         textField.delegate = mememeTextFieldDelegate
         textField.textAlignment = NSTextAlignment.center
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
         if text != nil {
             textField.text = text
         }
