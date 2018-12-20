@@ -86,8 +86,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cancelMeme(_ sender: Any) {
         selectedImage.image = nil
-        configureTextFields(textField: topTextField, text: "top")
-        configureTextFields(textField: bottomTextField, text: "bottom")
+        configureTextFields(textField: topTextField, text: "TOP")
+        configureTextFields(textField: bottomTextField, text: "BOTTOM")
     }
     
     func configureTextFields(textField: UITextField, text: String? = nil) {
@@ -133,7 +133,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func save(_ memeImage: UIImage) {
-        let meme = MememeGenerator(topTextFieldInImage: topTextField.text!, bottomTextFieldInImage: bottomTextField.text!, originalImage: selectedImage.image!, memeMeImage: memeImage)
+        _ = MememeGenerator(topTextFieldInImage: topTextField.text!, bottomTextFieldInImage: bottomTextField.text!, originalImage: selectedImage.image!, memeMeImage: memeImage)
         
     }
     
