@@ -13,6 +13,7 @@
 		2216697421C6942600EF8BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2216697321C6942600EF8BA0 /* Assets.xcassets */; };
 		2216697721C6942600EF8BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2216697521C6942600EF8BA0 /* LaunchScreen.storyboard */; };
 		2216698021C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216697F21C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift */; };
+		22FE323321CDA0530057EC4F /* MememeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE323221CDA0530057EC4F /* MememeGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2216697621C6942600EF8BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2216697821C6942600EF8BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2216697F21C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMememeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		22FE323221CDA0530057EC4F /* MememeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MememeGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2216697321C6942600EF8BA0 /* Assets.xcassets */,
 				2216697521C6942600EF8BA0 /* LaunchScreen.storyboard */,
 				2216697821C6942600EF8BA0 /* Info.plist */,
+				22FE323221CDA0530057EC4F /* MememeGenerator.swift */,
 			);
 			path = Mememev1.0;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2216698021C6C3DB00EF8BA0 /* CustomMememeTextFieldDelegate.swift in Sources */,
+				22FE323321CDA0530057EC4F /* MememeGenerator.swift in Sources */,
 				2216696F21C6942400EF8BA0 /* ViewController.swift in Sources */,
 				2216696D21C6942400EF8BA0 /* AppDelegate.swift in Sources */,
 			);
