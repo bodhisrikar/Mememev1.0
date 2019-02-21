@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MemeCollectionViewController: UIViewController {
     var memes: [MememeGenerator]! {
+
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.memes
     }
@@ -20,14 +21,16 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDelegate, 
         // Do any additional setup after loading the view.
         
     }
-    
+}
+
+extension MemeCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let memeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICustomCellCollectionViewCell", for: indexPath)
+        let memeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+        memeCell.cellImage.image = memes[indexPath.row].memeMeImage
         return memeCell
     }
-    
 }

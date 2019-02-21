@@ -27,12 +27,17 @@ extension MemeTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let memeCell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")
+        let memeCell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")
+        refreshData(tableView)
         let memeAtPosition = memes[indexPath.row]
         memeCell?.imageView?.image = memeAtPosition.memeMeImage
+        memeCell?.detailTextLabel?.text = memeAtPosition.bottomTextFieldInImage
         memeCell?.textLabel?.text = memeAtPosition.bottomTextFieldInImage
         return memeCell!
     }
     
+    private func refreshData(_ tableView: UITableView) {
+        tableView.reloadData()
+    }
     
 }
