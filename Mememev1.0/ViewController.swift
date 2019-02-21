@@ -126,7 +126,11 @@ class ViewController: UIViewController {
     }
     
     func save(_ memeImage: UIImage) {
-        _ = MememeGenerator(topTextFieldInImage: topTextField.text!, bottomTextFieldInImage: bottomTextField.text!, originalImage: selectedImage.image!, memeMeImage: memeImage)
+        let meme = MememeGenerator(topTextFieldInImage: topTextField.text!, bottomTextFieldInImage: bottomTextField.text!, originalImage: selectedImage.image!, memeMeImage: memeImage)
+        
+        // Adding the meme to memes array in the Application delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMememeImage() -> UIImage {
