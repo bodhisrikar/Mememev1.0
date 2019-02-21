@@ -9,17 +9,17 @@
 import UIKit
 
 class MemeCollectionViewController: UIViewController {
+    
+    @IBOutlet weak var memeCollectionView: UICollectionView!
     var memes: [MememeGenerator]! {
-
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.memes
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
+    override func viewWillAppear(_ animated: Bool) {
+        // Updating the memes array for new memes created
+        super.viewWillAppear(animated)
+        memeCollectionView.reloadData()
     }
 }
 

@@ -9,14 +9,16 @@
 import UIKit
 
 class MemeTableViewController: UIViewController {
+    @IBOutlet weak var memeTableView: UITableView!
     var memes: [MememeGenerator]! {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.memes
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Refreshing memes array for new memes created
+        memeTableView.reloadData()
     }
 
 }
@@ -27,17 +29,11 @@ extension MemeTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let memeCell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")
-        refreshData(tableView)
+        let memeCell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell")
         let memeAtPosition = memes[indexPath.row]
         memeCell?.imageView?.image = memeAtPosition.memeMeImage
-        memeCell?.detailTextLabel?.text = memeAtPosition.bottomTextFieldInImage
-        memeCell?.textLabel?.text = memeAtPosition.bottomTextFieldInImage
+        memeCell?.textLabel?.text = "\(memeAtPosition.topTextFieldInImage + memeAtPosition.bottomTextFieldInImage)"
         return memeCell!
-    }
-    
-    private func refreshData(_ tableView: UITableView) {
-        tableView.reloadData()
     }
     
 }

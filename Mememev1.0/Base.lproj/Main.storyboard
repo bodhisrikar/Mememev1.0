@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemeTableCell" textLabel="3zT-1u-LmI" detailTextLabel="Th7-Zd-LMo" style="IBUITableViewCellStyleSubtitle" id="bas-fH-uTg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemeTableViewCell" textLabel="3zT-1u-LmI" style="IBUITableViewCellStyleDefault" id="bas-fH-uTg">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bas-fH-uTg" id="MeF-oj-tx9">
@@ -60,16 +60,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3zT-1u-LmI">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Th7-Zd-LMo">
-                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -96,15 +89,17 @@
                         <viewLayoutGuide key="safeArea" id="cUn-8x-ZId"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="Jds-Si-m3K"/>
+                    <connections>
+                        <outlet property="memeTableView" destination="VlY-Xd-Wb5" id="1ae-AE-Taj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcd-7c-JUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-774" y="-147"/>
         </scene>
-        <!--Grid-->
+        <!--Meme Collection View Controller-->
         <scene sceneID="D9b-Ot-klF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bI7-bc-Vgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ctY-Zl-xRa" customClass="MemeCollectionViewController" customModule="Mememev1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQQ-6q-47Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -167,8 +162,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KWQ-Ih-YgK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Grid" id="2To-t4-Nqa"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="2To-t4-Nqa"/>
+                    <connections>
+                        <outlet property="memeCollectionView" destination="JUa-vr-QhN" id="vgs-Jv-Czj"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bI7-bc-Vgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-775.20000000000005" y="528.48575712143929"/>
         </scene>
