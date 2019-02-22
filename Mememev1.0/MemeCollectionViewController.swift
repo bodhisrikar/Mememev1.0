@@ -45,4 +45,11 @@ extension MemeCollectionViewController: UICollectionViewDelegate, UICollectionVi
         memeCell.cellImage.image = memes[indexPath.row].memeMeImage
         return memeCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("did select item at is called.")
+        let memeDetailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailViewController
+        memeDetailController.detailImage = memes[indexPath.row].memeMeImage
+        navigationController?.pushViewController(memeDetailController, animated: true)
+    }
 }

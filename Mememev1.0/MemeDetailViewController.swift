@@ -15,5 +15,8 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         selectedImage.image = detailImage
     }
-
+    @IBAction func cancel(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
 }

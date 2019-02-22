@@ -90,6 +90,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ld4-Rq-a4B" id="qUv-Jq-aTQ"/>
+                                    <outlet property="delegate" destination="ld4-Rq-a4B" id="pHQ-Nw-qnC"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -162,6 +163,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="ctY-Zl-xRa" id="znX-Co-qTM"/>
+                                    <outlet property="delegate" destination="ctY-Zl-xRa" id="ga4-P9-zRm"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -296,7 +298,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="PIW-Q8-JDq">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="O9E-GK-be4"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="O9E-GK-be4">
+                                            <connections>
+                                                <action selector="cancel:" destination="hI7-2i-b8o" id="kZt-fi-DXR"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

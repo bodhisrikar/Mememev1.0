@@ -33,11 +33,12 @@ extension MemeTableViewController: UITableViewDelegate, UITableViewDataSource {
         let memeCell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell")
         let memeAtPosition = memes[indexPath.row]
         memeCell?.imageView?.image = memeAtPosition.memeMeImage
-        memeCell?.textLabel?.text = "\(memeAtPosition.topTextFieldInImage + memeAtPosition.bottomTextFieldInImage)"
+        memeCell?.textLabel?.text = "\(memeAtPosition.topTextFieldInImage + " " + memeAtPosition.bottomTextFieldInImage)"
         return memeCell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did select row at is called")
         let memeDetailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailViewController
         memeDetailController.detailImage = memes[indexPath.row].memeMeImage
         navigationController?.pushViewController(memeDetailController, animated: true)
