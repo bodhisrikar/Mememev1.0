@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private let mememeTextAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strokeColor: UIColor.black,
                                                                        NSAttributedString.Key.foregroundColor: UIColor.white,
                                                                        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-                                                                       NSAttributedString.Key.strokeWidth: 0]
+                                                                       NSAttributedString.Key.strokeWidth: -4.0]
     
     private let mememeTextFieldDelegate = CustomMememeTextFieldDelegate()
     
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configureTextFields(textField: topTextField)
         configureTextFields(textField: bottomTextField)
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,10 +70,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancelMeme(_ sender: Any) {
-        selectedImage.image = nil
-        configureTextFields(textField: topTextField, text: "TOP")
-        configureTextFields(textField: bottomTextField, text: "BOTTOM")
-        configureButtons(isEnabled: (selectedImage.image != nil))
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     
     func configureTextFields(textField: UITextField, text: String? = nil) {

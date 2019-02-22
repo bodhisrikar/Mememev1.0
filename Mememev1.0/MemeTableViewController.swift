@@ -10,6 +10,7 @@ import UIKit
 
 class MemeTableViewController: UIViewController {
     @IBOutlet weak var memeTableView: UITableView!
+    
     var memes: [MememeGenerator]! {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.memes
@@ -34,6 +35,12 @@ extension MemeTableViewController: UITableViewDelegate, UITableViewDataSource {
         memeCell?.imageView?.image = memeAtPosition.memeMeImage
         memeCell?.textLabel?.text = "\(memeAtPosition.topTextFieldInImage + memeAtPosition.bottomTextFieldInImage)"
         return memeCell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memeDetailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailViewController
+        memeDetailController.detailImage = memes[indexPath.row].memeMeImage
+        navigationController?.pushViewController(memeDetailController, animated: true)
     }
     
 }

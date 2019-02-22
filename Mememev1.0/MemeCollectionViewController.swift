@@ -11,9 +11,21 @@ import UIKit
 class MemeCollectionViewController: UIViewController {
     
     @IBOutlet weak var memeCollectionView: UICollectionView!
+    @IBOutlet weak var memeCollectionFlowLayout: UICollectionViewFlowLayout!
     var memes: [MememeGenerator]! {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.memes
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space: CGFloat = 1.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        memeCollectionFlowLayout.minimumInteritemSpacing = space
+        memeCollectionFlowLayout.minimumLineSpacing = space
+        memeCollectionFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     override func viewWillAppear(_ animated: Bool) {
