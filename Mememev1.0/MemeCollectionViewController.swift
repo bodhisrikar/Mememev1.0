@@ -28,10 +28,9 @@ class MemeCollectionViewController: UIViewController {
         memeCollectionFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // Updating the memes array for new memes created
-        super.viewWillAppear(animated)
-        memeCollectionView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        memeCollectionView.reloadData() // Updating the memes array for new memes created and making sure all components are rendered on screen.
     }
 }
 

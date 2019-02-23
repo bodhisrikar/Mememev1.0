@@ -16,10 +16,9 @@ class MemeTableViewController: UIViewController {
         return appDelegate.memes
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Refreshing memes array for new memes created
-        memeTableView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        memeTableView.reloadData() // Refreshing memes array for new memes created and making sure all components are rendered on the screen.
     }
 
 }
