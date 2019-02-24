@@ -63,6 +63,9 @@ class ViewController: UIViewController {
             if completed {
                 self.save(memedImage)
                 self.dismiss(animated: true, completion: nil)
+                if let navigationController = self.navigationController {
+                    navigationController.popToRootViewController(animated: true)
+                }
             }
         }
         present(shareImageController, animated: true, completion: nil)
