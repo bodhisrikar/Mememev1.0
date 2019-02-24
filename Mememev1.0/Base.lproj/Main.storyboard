@@ -146,7 +146,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="CsE-Z6-4JP">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="z96-nY-bkf"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="z96-nY-bkf">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="eed-Fi-U06"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -201,7 +205,6 @@
                     <connections>
                         <outlet property="memeCollectionFlowLayout" destination="IXI-R8-JWb" id="RON-fq-XDu"/>
                         <outlet property="memeCollectionView" destination="JUa-vr-QhN" id="vgs-Jv-Czj"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="HtA-sK-ycT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI7-bc-Vgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,6 +355,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lbu-Iu-LrS"/>
+        <segue reference="eed-Fi-U06"/>
     </inferredMetricsTieBreakers>
 </document>
