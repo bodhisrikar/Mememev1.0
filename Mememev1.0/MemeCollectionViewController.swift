@@ -31,6 +31,11 @@ class MemeCollectionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         memeCollectionView.reloadData() // Updating the memes array for new memes created and making sure all components are rendered on screen.
+        if memes.count == 0 {
+            displayAddMeme(memeCollectionView)
+        } else {
+            displaySentMeme(memeCollectionView)
+        }
     }
 }
 
@@ -50,5 +55,19 @@ extension MemeCollectionViewController: UICollectionViewDelegate, UICollectionVi
         let memeDetailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailViewController
         memeDetailController.detailImage = memes[indexPath.row].memeMeImage
         navigationController?.pushViewController(memeDetailController, animated: true)
+    }
+    
+    private func displayAddMeme(_ collectionView: UICollectionView) {
+        let addMemeMessageLabel = UILabel()
+        addMemeMessageLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60)
+        addMemeMessageLabel.center = self.view.center
+        addMemeMessageLabel.textColor = UIColor.brown
+        addMemeMessageLabel.textAlignment = .center
+        addMemeMessageLabel.text = "There are no sent memes. Click \("'+'") to add memes."
+        collectionView.backgroundView = addMemeMessageLabel
+    }
+    
+    private func displaySentMeme(_ collectionView: UICollectionView) {
+        collectionView.backgroundView = nil
     }
 }

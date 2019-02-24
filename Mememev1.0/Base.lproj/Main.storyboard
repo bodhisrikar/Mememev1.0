@@ -292,7 +292,6 @@
                         <outlet property="albumToolbarItem" destination="6Jq-aN-dK2" id="arN-SF-GoZ"/>
                         <outlet property="bottomTextField" destination="DlU-Ml-VQ2" id="O9T-6h-9I9"/>
                         <outlet property="cameraToolbarButton" destination="DzX-ow-tb5" id="Khz-OC-cNC"/>
-                        <outlet property="cancelButton" destination="dju-EF-G2D" id="mIN-Ca-DOQ"/>
                         <outlet property="selectedImage" destination="ERC-Pf-ih8" id="QbQ-Nq-tJ7"/>
                         <outlet property="shareButton" destination="o5n-Gx-pzL" id="3wB-MB-PeX"/>
                         <outlet property="shareNavbar" destination="uDX-Ns-YvN" id="XfA-wv-9KB"/>

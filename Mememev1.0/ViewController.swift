@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var albumToolbar: UIToolbar!
     @IBOutlet weak var shareNavbar: UINavigationBar!
     
@@ -89,7 +88,6 @@ class ViewController: UIViewController {
     
     func configureButtons(isEnabled: Bool) {
         shareButton.isEnabled = isEnabled
-        cancelButton.isEnabled = isEnabled
     }
     
     func sourcePicker(sourceType: UIImagePickerController.SourceType) {

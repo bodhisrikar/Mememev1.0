@@ -19,6 +19,11 @@ class MemeTableViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         memeTableView.reloadData() // Refreshing memes array for new memes created and making sure all components are rendered on the screen.
+        if memes.count == 0 {
+            displayAddMeme(memeTableView)
+        } else {
+            displaySentMeme(memeTableView)
+        }
     }
 
 }
@@ -41,6 +46,22 @@ extension MemeTableViewController: UITableViewDelegate, UITableViewDataSource {
         let memeDetailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailViewController
         memeDetailController.detailImage = memes[indexPath.row].memeMeImage
         navigationController?.pushViewController(memeDetailController, animated: true)
+    }
+    
+    private func displayAddMeme(_ tableView: UITableView) {
+        let addMemeMessageLabel = UILabel()
+        addMemeMessageLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60)
+        addMemeMessageLabel.center = self.view.center
+        addMemeMessageLabel.textColor = UIColor.brown
+        addMemeMessageLabel.textAlignment = .center
+        addMemeMessageLabel.text = "There are no sent memes. Click \("'+'") to add memes."
+        tableView.backgroundView = addMemeMessageLabel
+        tableView.separatorStyle = .none
+    }
+    
+    private func displaySentMeme(_ tableView: UITableView) {
+        tableView.backgroundView = nil
+        tableView.separatorStyle = .singleLine
     }
     
 }
